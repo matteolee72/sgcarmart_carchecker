@@ -26,14 +26,21 @@ for i in range(len(car_names)):
     soup = BeautifulSoup(source, features="html.parser")
     article=soup.find('div',{"id":"contentblank"})
     depre=article.findAll(style="width:101px;")
+    name=article.findAll(style="width:186px;padding-left:4px;")
     
     #looping through each depre to check for matches
     for d in depre:
+        z = 0
+        n = name[z].text
         p = d.text.strip()
         x = re.sub(r"[^0-9]","",p)
         x = int(x)
+        z+=1
+        
         if (x <= limit):
-            car_count+=1
+            if (n.endswith("(OPC)")):
+                print(n.endswith("(OPC)"))
+                car_count+=1
 
     if car_count > 0:
         print(car_name + ": " + str(car_count))
