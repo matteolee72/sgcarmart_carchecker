@@ -38,8 +38,7 @@ for i in range(len(car_names)):
         z+=1
         
         if (x <= limit):
-            if (n.endswith("(OPC)")):
-                print(n.endswith("(OPC)"))
+            if (n.endswith("(OPC)")!=True):
                 car_count+=1
 
     if car_count > 0:
