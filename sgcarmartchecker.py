@@ -29,15 +29,17 @@ for i in range(len(car_names)):
     name=article.findAll(style="width:186px;padding-left:4px;")
     
     #looping through each depre to check for matches
+    z = 0
     for d in depre:
-        z = 0
-        n = name[z].text
+        n = name[z].a.text
+        
         p = d.text.strip()
         x = re.sub(r"[^0-9]","",p)
         x = int(x)
         z+=1
         
         if (x <= limit):
+            print(n)
             if (n.endswith("(OPC)")!=True):
                 car_count+=1
 
