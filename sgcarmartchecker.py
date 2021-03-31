@@ -32,14 +32,12 @@ for i in range(len(car_names)):
     z = 0
     for d in depre:
         n = name[z].a.text
-        
         p = d.text.strip()
         x = re.sub(r"[^0-9]","",p)
         x = int(x)
         z+=1
         
         if (x <= limit):
-            print(n)
             if (n.endswith("(OPC)")!=True):
                 car_count+=1
 
